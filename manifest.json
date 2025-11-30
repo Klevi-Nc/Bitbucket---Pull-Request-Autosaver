@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Bitbucket PR Autosave",
+  "version": "1.0",
+  "description": "Autosaves PR descriptions in Bitbucket with popup UI.",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Bitbucket PR Autosave",
+    "default_icon": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://source.int.netcentric.biz/git/projects/*/repos/*/pull-requests*"],
+      "js": ["autosave.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

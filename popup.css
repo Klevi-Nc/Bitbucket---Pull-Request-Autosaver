@@ -1,0 +1,188 @@
+body {
+  font-family: sans-serif;
+  min-width: 400px;
+  padding: 10px;
+}
+
+/* Existing draft container styles */
+.draft {
+  border: 1px solid #ccc;
+  padding: 6px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+}
+
+.draft-container {
+  border: 1px solid #ccc;
+  margin-bottom: 8px;
+  border-radius: 4px;
+}
+
+.draft-header {
+  background: #f0f0f0;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.draft-content {
+  padding: 6px 10px;
+  background: #fff;
+}
+
+/* Existing saved time label */
+.draft-saved-time {
+  font-weight: normal;
+  font-size: 11px;
+  color: #555;
+  margin-left: 4px;
+}
+
+/* Text area inside saved drafts */
+.draft-text {
+  white-space: pre-wrap;
+  max-height: 100px;
+  overflow: auto;
+  background: #f9f9f9;
+  padding: 4px;
+  border-radius: 3px;
+  font-size: 13px;
+}
+
+/* Base button styles */
+button {
+  margin-top: 4px;
+  padding: 4px 8px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+/* --- New Styles for Accordion (branches and versions) --- */
+
+.branch-container {
+  margin-bottom: 10px;
+}
+
+/* Accordion header for branch */
+.accordion {
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  padding: 8px 10px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  font-weight: bold;
+  border-radius: 6px;
+  margin-top: 6px;
+}
+
+.accordion:hover {
+  background-color: #0069d9;
+}
+
+.accordion.active {
+  background-color: #0056b3;
+}
+
+/* Accordion panel (inside each branch) */
+.panel {
+  background: #f9f9f9;
+  border-left: 2px solid #007bff;
+  padding: 8px;
+  border-radius: 4px;
+  margin-top: 4px;
+}
+
+/* Each saved version block */
+.version-item {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 8px;
+  margin-top: 8px;
+}
+
+.version-timestamp {
+  font-size: 11px;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.button-group {
+  margin-top: 6px;
+}
+
+.button-group button {
+  margin-right: 6px;
+}
+
+/* Container for top action buttons */
+.top-buttons {
+  display: flex;
+  justify-content: flex-end; /* right-align */
+  gap: 6px;                  /* space between buttons */
+  margin-bottom: 10px;
+}
+
+/* Export button style */
+#export {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+#export:hover {
+  background-color: #0069d9;
+}
+
+/* Clear All button style */
+#clearAll {
+  background-color: #dc3545; /* red */
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+#clearAll:hover {
+  background-color: #c82333;
+}
+
+/* Branch header wrapper to align accordion and delete button */
+.branch-header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Delete branch button styling */
+.delete-branch-btn {
+  background-color: #ff4d4f;
+  color: white;
+  border: none;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+  margin-left: 6px;
+  transition: background-color 0.2s;
+}
+
+.delete-branch-btn:hover {
+  background-color: #ff7875;
+}
+
+.version-limit-info {
+  font-size: 11px;
+  color: #555;
+  margin-bottom: 4px;
+}
