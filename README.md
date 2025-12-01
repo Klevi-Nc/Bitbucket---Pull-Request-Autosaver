@@ -1,34 +1,26 @@
-# Bitbucket---Pull-Request-Autosaver Extension
+# Bitbucket | Pull Request Autosaver Extension
 
 A Chrome Extension that automatically saves your Bitbucket pull-request descriptions, keeps a version history per branch, and provides a UI to browse, copy, or restore previous drafts.
 Designed for developers who frequently refine PR descriptions and want reliable autosaving without losing work during navigation, refreshes, crashes, or session timeouts.
 
-⸻
+⭐ **Features**
 
-⭐ Features
-
-Autosave
+**Autosave**
 	•	Automatically saves the PR description while typing.
 	•	Debounced saving to prevent excessive writes.
 	•	Minimum time gap between saves (MIN_SAVE_GAP) to avoid duplicate versions.
 	•	Only saves a version if the text actually changed.
 
-⸻
-
-Version History
+**Version History**
 	•	Keeps only the last 10 versions per branch.
 	•	Older versions are removed automatically.
 	•	Fully stored locally (Chrome storage.local).
 
-⸻
-
-Branch-Aware Drafting
+**Branch-Aware Drafting**
 	•	Each Bitbucket branch maintains its own version list.
 	•	Switching branches loads the correct history.
 
-⸻
-
-Popup UI
+**Popup UI**
 
 The extension popup displays:
 	•	A list of tracked branches.
@@ -39,13 +31,11 @@ The extension popup displays:
 	•	Export all drafts to a .txt file.
 	•	Clear all saved drafts option.
 
-⸻
-
 Automatic Restore
 
 When the Bitbucket PR description field is empty, the extension restores the most recently saved version for that branch.
 
-📂 Project Structure
+📂 **Project Structure**
 
 bitbucket-pr-autosave-extension/
 ├── manifest.json
@@ -55,9 +45,9 @@ bitbucket-pr-autosave-extension/
 ├── popup.css            # Styling for popup UI
 └── icons/               # Extension icons
 
-🔧 How It Works
+🔧 **How It Works**
 
-1. autosave.js
+1. **autosave.js**
 
 Injected into Bitbucket PR pages.
 
@@ -74,9 +64,7 @@ Key techniques:
 	•	Chrome storage.local for durable browser-based saving.
 	•	Branch names extracted from Bitbucket URL or UI.
 
-⸻
-
-2. popup.js
+2. **popup.js**
 
 Runs inside extension popup.
 
@@ -89,18 +77,14 @@ Responsibilities:
 	•	Display “Showing last 10 versions” label per branch.
 	•	Clear-all functionality.
 
-⸻
-
-3. popup.html
+3. **popup.html**
 
 Defines:
 	•	Branch list container.
 	•	Export button.
 	•	Clear-all button.
 
-⸻
-
-4. popup.css
+4. **popup.css**
 
 Styles the popup to be readable, compact, and scroll-friendly.
 
@@ -112,22 +96,17 @@ Styles the popup to be readable, compact, and scroll-friendly.
 	5.	Select this project folder.
 	6.	Navigate to any Bitbucket PR page to see it in action.
 
-⸻
-🔐 Privacy
+🔐 **Privacy**
 
 This extension:
 	•	Stores all data locally on your machine.
 	•	Never sends data to external servers.
 	•	Never tracks analytics, telemetry, or user activity outside Bitbucket PR descriptions.
 
-⸻
-
-🧪 Known Limitations
+🧪 **Known Limitations**
 	•	Works only on Bitbucket PR pages (not commits or issues).
 	•	Only the default Bitbucket editor is supported (custom editors may not work).
 
-⸻
-
-📣 Contributing
+📣 **Contributing**
 
 Pull requests are welcome! Feel free to open issues for bugs or ideas.
