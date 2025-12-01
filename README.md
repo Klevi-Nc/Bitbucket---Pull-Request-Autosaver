@@ -6,23 +6,25 @@ Designed for developers who frequently refine PR descriptions and want reliable 
 ⭐ **Features**
 
 **Autosave**
+
 	•	Automatically saves the PR description while typing.
 	•	Debounced saving to prevent excessive writes.
 	•	Minimum time gap between saves (MIN_SAVE_GAP) to avoid duplicate versions.
 	•	Only saves a version if the text actually changed.
 
 **Version History**
+
 	•	Keeps only the last 10 versions per branch.
 	•	Older versions are removed automatically.
 	•	Fully stored locally (Chrome storage.local).
 
 **Branch-Aware Drafting**
+
 	•	Each Bitbucket branch maintains its own version list.
 	•	Switching branches loads the correct history.
 
-**Popup UI**
+**Popup UI - The extension popup displays:**
 
-The extension popup displays:
 	•	A list of tracked branches.
 	•	Each branch expandable into version history.
 	•	“Copy” functionality for each version.
@@ -31,27 +33,17 @@ The extension popup displays:
 	•	Export all drafts to a .txt file.
 	•	Clear all saved drafts option.
 
-Automatic Restore
-
-When the Bitbucket PR description field is empty, the extension restores the most recently saved version for that branch.
-
 📂 **Project Structure**
+ 
+<img width="576" height="162" alt="Screenshot 2025-12-01 at 10 23 05" src="https://github.com/user-attachments/assets/7796578d-ce75-46e3-b046-673594a7712f" />
 
-bitbucket-pr-autosave-extension/
-├── manifest.json
-├── autosave.js          # Injected logic for autosaving + restoring
-├── popup.html           # Popup UI layout
-├── popup.js             # History manager + UI logic
-├── popup.css            # Styling for popup UI
-└── icons/               # Extension icons
 
 🔧 **How It Works**
 
 1. **autosave.js**
 
-Injected into Bitbucket PR pages.
+Injected into Bitbucket PR pages. Responsibilities:
 
-Responsibilities:
 	•	Detect the PR description editor.
 	•	Monitor input events & trigger autosave with debounce.
 	•	Save only if text changed and minimum time gap passed.
@@ -60,15 +52,15 @@ Responsibilities:
 	•	Regular cleanup (cleanupOldVersions) runs every 10 seconds.
 
 Key techniques:
+
 	•	MutationObserver for waiting until the editor appears.
 	•	Chrome storage.local for durable browser-based saving.
 	•	Branch names extracted from Bitbucket URL or UI.
 
 2. **popup.js**
 
-Runs inside extension popup.
+Runs inside extension popup. Responsibilities:
 
-Responsibilities:
 	•	Load all branch histories from storage.
 	•	Limit each branch internally to 10 versions (safety fallback).
 	•	Render collapsible lists for branches + versions.
@@ -80,6 +72,7 @@ Responsibilities:
 3. **popup.html**
 
 Defines:
+
 	•	Branch list container.
 	•	Export button.
 	•	Clear-all button.
@@ -88,22 +81,26 @@ Defines:
 
 Styles the popup to be readable, compact, and scroll-friendly.
 
-🛠 Installation (Development Mode)
-	1.	Clone the repository
-  2.	Open Chrome → chrome://extensions/
-	3.	Enable Developer Mode.
-	4.	Click Load unpacked.
-	5.	Select this project folder.
-	6.	Navigate to any Bitbucket PR page to see it in action.
+
+🛠 **Installation (Development Mode)**
+
+	1.Clone the repository
+    2.Open Chrome → chrome://extensions/
+	3.Enable Developer Mode.
+	4.Click Load unpacked.
+	5.Select this project folder.
+	6.Navigate to any Bitbucket PR page to see it in action.
 
 🔐 **Privacy**
 
 This extension:
+
 	•	Stores all data locally on your machine.
 	•	Never sends data to external servers.
 	•	Never tracks analytics, telemetry, or user activity outside Bitbucket PR descriptions.
 
 🧪 **Known Limitations**
+
 	•	Works only on Bitbucket PR pages (not commits or issues).
 	•	Only the default Bitbucket editor is supported (custom editors may not work).
 
