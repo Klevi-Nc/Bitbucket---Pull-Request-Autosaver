@@ -1,6 +1,6 @@
 # Bitbucket | Pull Request Autosaver Extension
 
-A Chrome Extension that automatically saves your Bitbucket pull-request descriptions, keeps a version history per branch, and provides a UI to browse, copy, or restore previous drafts.
+A Chrome Extension that automatically saves your Bitbucket pull-request descriptions, keeps a version history per branch, and provides a UI to browse, copy, or delete previous drafts.
 Designed for developers who frequently refine PR descriptions and want reliable autosaving without losing work during navigation, refreshes, crashes, or session timeouts.
 
 ⭐ **Features**
@@ -48,7 +48,6 @@ Injected into Bitbucket PR pages. Responsibilities:
 	•	Monitor input events & trigger autosave with debounce.
 	•	Save only if text changed and minimum time gap passed.
 	•	Enforce 10-version limit per branch.
-	•	Restore latest version on load if editor is empty.
 	•	Regular cleanup (cleanupOldVersions) runs every 10 seconds.
 
 Key techniques:
